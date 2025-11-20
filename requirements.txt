@@ -1,26 +1,2 @@
-# ============================================================================
-# Cyberzilla Codex - Requirements
-# ============================================================================
-# Python Standard Library (No external dependencies for core functionality)
-
-# Optional: Python Code Analysis Tools
-pylint>=3.0.0
-black>=23.0.0
-flake8>=6.0.0
-mypy>=1.0.0
-
-# Optional: For advanced reporting
-colorama>=0.4.6  # Cross-platform colored terminal text (Windows support)
-
-# ============================================================================
-# JavaScript/TypeScript Linters (Requires Node.js)
-# ============================================================================
-# Install these globally via npm:
-# npm install -g eslint prettier
-
-# ============================================================================
-# Other Language Tools (Install separately)
-# ============================================================================
-# Go: golangci-lint (https://golangci-lint.run/usage/install/)
-# Rust: cargo install clippy
-# C/C++: apt-get install cppcheck (Linux) or brew install cppcheck (macOS)
+pytest
+jsonschema
