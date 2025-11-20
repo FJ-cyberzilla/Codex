@@ -1,4 +1,6 @@
 name: Codex Quality Check (Multi-Language)
+permissions:
+  contents: read
 
 on:
   push:
