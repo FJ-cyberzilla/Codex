@@ -2,12 +2,12 @@
 ### Enterprise Code Quality Gate
 
 <div align="center">
-```
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Version](https://img.shields.io/badge/version-6.1.1-pink.svg)](https://github.com/FJ-cyberzilla/codex)
-[![CI](https://img.shields.io/badge/CI-GitHub%20Actions-brightgreen.svg)](https://github.com/FJ-cyberzilla/codex/actions)
+[![CI](https://img.shields.io/badge/CI-GitHub%20Actions-brightgreen.svg)](https://github.com/FJ-cyberzilla/codex/actions)[![Codex Quality Gate](https://github.com/FJ-cyberzilla/codex/actions/workflows/codex-ci.yml/badge.svg)](https://github.com/FJ-cyberzilla/codex/actions/workflows/codex-ci.yml)
 
 **The Ultimate Production-Ready Code Quality Tool**  
 Thread-Safe | Auto-Fix | Multi-Language | CI/CD Ready
