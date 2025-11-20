@@ -1,4 +1,3 @@
-![25959](https://github.com/user-attachments/assets/e02249d7-1c2d-4db5-b158-aee9a310d4c8)
 # Codex 
 ### Enterprise Code Quality Gate
 
