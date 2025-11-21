@@ -1,140 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberzilla Systems - Go, C++, Rust, Python</title>
-    <meta name="description" content="Cyberzilla Systems - Professional software development with Go, C++, Rust, and Python">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 3rem;
-        }
-        
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .main-content {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .tech-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease;
-        }
-        
-        .tech-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .tech-card h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-        }
-        
-        .email {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .email:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Cyberzilla Systems</h1>
-            <p>Building High-Performance Software Solutions</p>
-        </div>
-        
-        <div class="main-content">
-            <h2>Technology Expertise</h2>
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <h3>Golang</h3>
-                    <p>Backend systems, APIs, and concurrent applications</p>
-                </div>
-                <div class="tech-card">
-                    <h3>C++</h3>
-                    <p>High-performance computing, game engines, system programming</p>
-                </div>
-                <div class="tech-card">
-                    <h3>Rust</h3>
-                    <p>Memory-safe systems programming, WebAssembly, embedded</p>
-                </div>
-                <div class="tech-card">
-                    <h3>Python</h3>
-                    <p>Data science, machine learning, automation, web development</p>
-                </div>
-            </div>
-            
-            <div class="contact">
-                <h3>Get In Touch</h3>
-                <p>Email: <a href="mailto:cyberzilla.systems@gmail.com" class="email">cyberzilla.systems@gmail.com</a></p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+# .github/workflows/static.yml
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
